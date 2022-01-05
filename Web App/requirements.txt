@@ -1,0 +1,13 @@
+numpy
+Pillow
+tensorflow-cpu
+flask
+Werkzeug
+gunicorn
+
+
+
+
+
+
+
