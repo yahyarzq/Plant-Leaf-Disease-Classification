@@ -5,16 +5,17 @@ from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
 import pickle
+import cv2
 
 app = Flask(__name__)
 
 def image_processing(img):
     model = load_model('./model/plant_disease_classification_model.h5')
     image_labels = pickle.load(open('./model/plant_disease_label_transform.pkl', 'rb'))
-    image = Image.open(img)
-    image = image.resize((32,32))
+    image = cv2.imread(img)
+    query = cv2.resize(image, (32, 32))
     data = []
-    image_array = np.array(image)
+    image_array = np.array(query)
     data.append(image_array)
     
     np_image = np.array(image_array, dtype=np.float16) / 225.0
