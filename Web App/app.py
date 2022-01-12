@@ -10,9 +10,9 @@ app = Flask(__name__)
 
 def image_processing(img):
     model = load_model('./model/plant_disease_classification_model.h5')
-    image_labels = pickle.load(open('./labels/plant_disease_label_transform.pkl', 'rb'))
+    image_labels = pickle.load(open('./model/plant_disease_label_transform.pkl', 'rb'))
     image = Image.open(img)
-    image = image.resize((30,30))
+    image = image.resize((32,32))
     data = []
     image_array = np.array(image)
     data.append(image_array)
