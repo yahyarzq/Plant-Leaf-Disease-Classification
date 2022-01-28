@@ -1,10 +1,11 @@
 numpy
-Pillow
+pillow
 tensorflow-cpu
 flask
 Werkzeug
 gunicorn
 opencv-contrib-python-headless
+scikit-learn
 
 
 
